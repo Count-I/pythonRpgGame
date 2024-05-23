@@ -10,7 +10,7 @@ Juego sencillo tipo RPG usando la libreria de pygame
 
 Clona el repositorio: 
 ```bash
-git clone (https://github.com/Count-I/pythonRpgGame.git)
+git clone https://github.com/Count-I/pythonRpgGame.git
 ```
 No olvides entrar al directorio del juego
 ```bash
