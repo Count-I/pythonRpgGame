@@ -7,12 +7,13 @@ Juego sencillo tipo RPG usando la libreria de pygame
 * Pygame ( Ó tambien puedes instalar dependencias. Ver Inicialización)
   
 ## Inicialización
-Clona el repositorio: |
+
+Clona el repositorio: 
 ```bash
 git clone (https://github.com/Count-I/pythonRpgGame.git)
 ```
-```bash
 No olvides entrar al directorio del juego
+```bash
 cd pythonRpgGame
 ```
 Crea un entorno virtual ( No es necesario, pero es recomendado):
