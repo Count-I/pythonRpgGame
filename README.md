@@ -36,5 +36,5 @@ pip install -r requirements.txt
 Si completaste los pasos anteriores satisfactoriamente, deberias ser capaz de jugar ahora. 
 Prueba a ejecutar el juego:
 ```bash
-python -m venv venv
+python main.py
 ```
