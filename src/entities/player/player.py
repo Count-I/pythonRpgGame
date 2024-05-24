@@ -1,5 +1,6 @@
 import pygame
 import os
+from globals import *
 
 # put Python classes and functions here
 
@@ -42,6 +43,16 @@ class Player(pygame.sprite.Sprite):
         
         self.rect.x = self.rect.x + self.movex
         self.rect.y = self.rect.y + self.movey
+        
+        # Boundary check
+        if self.rect.right > worldx:
+            self.rect.right = worldx
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.bottom > worldy:
+            self.rect.bottom = worldy
+        if self.rect.top < 0:
+            self.rect.top = 0
         
         if self.movex < 0:
             self.direction = 'left'

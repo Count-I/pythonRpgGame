@@ -7,17 +7,6 @@ from src.entities.player.player import Player
 from src.entities.enemy.enemy import Enemy
 from src.utils.helpers import Helper
 
-'''
-Variables
-'''
-'''
-Objects
-'''
-
-'''
-Setup
-'''
-
 #all_sprites 
 all_sprites = pygame.sprite.Group()
 
@@ -50,7 +39,7 @@ for index in range(2):
 menu = True #Initial menu
 font = pygame.font.Font(None, 36)
 
-
+gameOver = False
 
 start_button = pygame.Rect(worldx//2 - 50, worldy//2 - 25, 100, 50)
 
@@ -69,11 +58,16 @@ while main:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if start_button.collidepoint(event.pos):
                         menu = False
+                    if start_again_button.collidepoint(event.pos):
+                        Helper.reset_game(player, enemy_list)
+                        gameOver = False
+                        menu = False
             
             world.blit(backdrop, backdropbox)
-            Helper.draw_menu()
-            pygame.draw.rect(world, BLUE, start_button)
-            Helper.draw_menu()
+            if(gameOver):
+                Helper.draw_menu(over=True)
+            else:
+                Helper.draw_menu()
             
             pygame.display.flip()
             clock.tick(fps)
@@ -111,7 +105,6 @@ while main:
                     if event.key == ord('q'):
                         pygame.quit()
                         sys.exit()
-                        main = False  
         
             world.blit(backdrop, backdropbox)
             player.update()

@@ -1,6 +1,7 @@
 import pygame
 import os
 import random
+from globals import *
 
 # put "Enemy" Classes and functions
 class Enemy(pygame.sprite.Sprite):
@@ -44,6 +45,16 @@ class Enemy(pygame.sprite.Sprite):
 
         if self.rect.x == target_point[0] and self.rect.y == target_point[1]:
             self.patrol_index = (self.patrol_index + 1) % len(self.patrol_points)
+
+        # Boundary check
+        if self.rect.right > worldx:
+            self.rect.right = worldx
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.bottom > worldy:
+            self.rect.bottom = worldy
+        if self.rect.top < 0:
+            self.rect.top = 0
 
     def update(self, player):
         distance_to_player = ((self.rect.x - player.rect.x) ** 2 + (self.rect.y - player.rect.y) ** 2) ** 0.5

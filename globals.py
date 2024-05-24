@@ -13,4 +13,5 @@ WHITE = (254, 254, 254)
 GREEN = (0, 255, 0)
 
 start_button = pygame.Rect(worldx//2 - 50, worldy//2 - 25, 100, 50)
+start_again_button = start_button.inflate(50,0)
     
